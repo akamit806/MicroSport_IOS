@@ -147,7 +147,7 @@
 
 -(void)navigateToHomeScreen
 {
-    UINavigationController *homeController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+    UINavigationController *homeController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
     LeftViewController *leftController = (LeftViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
     RESideMenu *sideMenu = [[RESideMenu alloc] initWithContentViewController:homeController leftMenuViewController:leftController rightMenuViewController:nil];
     sideMenu.contentViewShadowColor = [UIColor blackColor];
@@ -212,73 +212,78 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error
 {
     [SVProgressHUD dismiss];
-//    [self navigateToHomeScreen];
+    //    [self navigateToHomeScreen];
     
-//    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-//     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-//         
-//         if (!error) {
-//             NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
-//         }
-//     }];
+    //    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+    //     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+    //
+    //         if (!error) {
+    //             NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
+    //         }
+    //     }];
     
-//    @{@"fields": @"picture, email,first_name,gender,last_name,location,picture,sports"}
+    //    @{@"fields": @"picture, email,first_name,gender,last_name,location,picture,sports"}
     
     
     [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
-                                       parameters:@{@"fields": @"picture, email,first_name,gender,last_name"}]
+                                       parameters:@{@"fields": @"picture, email,first_name,gender,last_name,location{location}"}]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          if (!error) {
              
              NSString *emailId = [result objectForKey:@"email"];
              NSString *userId = [result objectForKey:@"id"];
              NSString *profile = [[[result objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
+             NSString *firstName = [result objectForKey:@"first_name"];
+             NSString *lastName = [result objectForKey:@"last_name"];
+             NSString *gender = [result objectForKey:@"gender"];
+             
+             
              
              NSMutableDictionary *dict = [NSMutableDictionary dictionary];
              [dict setValue:emailId forKey:@"email"];
              [dict setValue:userId forKey:@"user_id"];
-             [dict setValue:profile forKey:@"profile"];
+             [dict setValue:profile forKey:@"image_url"];
              
-//             [dict setValue:profile forKey:@"country"];
-//             [dict setValue:profile forKey:@"age"];
-//             [dict setValue:profile forKey:@"fav_sport"];
-//             [dict setValue:profile forKey:@"first_name"];
-//             [dict setValue:profile forKey:@"last_name"];
-//             [dict setValue:profile forKey:@"gender"];
-//             [dict setValue:profile forKey:@"phone"];
-//             [dict setValue:profile forKey:@"phone_code"];
-//             [dict setValue:profile forKey:@"biography"];
-
+             //             [dict setValue:profile forKey:@"country"];
+             //             [dict setValue:profile forKey:@"age"];
+             //             [dict setValue:profile forKey:@"fav_sport"];
+             [dict setValue:firstName forKey:@"first_name"];
+             [dict setValue:lastName forKey:@"last_name"];
+             [dict setValue:gender forKey:@"gender"];
+             //             [dict setValue:profile forKey:@"phone"];
+             //             [dict setValue:profile forKey:@"phone_code"];
+             //             [dict setValue:profile forKey:@"biography"];
              
-
-
+             
+             
+             
              
              
              [[SharedMS instance] setUserInfo:dict];
              [self navigateToHomeScreen];
-
+             
              
          }
          else{
              NSLog(@"%@", [error localizedDescription]);
          }
      }];
-
-//    if (FBSession.activeSession.isOpen) {
-//        
-//        [[FBRequest requestForMe] startWithCompletionHandler:
-//         ^(FBRequestConnection *connection,
-//           NSDictionary<FBGraphUser> *user,
-//           NSError *error) {
-//             if (!error) {
-//                 NSString *firstName = user.first_name;
-//                 NSString *lastName = user.last_name;
-//                 NSString *facebookId = user.id;
-//                 NSString *email = [user objectForKey:@"email"];
-//                 NSString *imageUrl = [[NSString alloc] initWithFormat: @"http://graph.facebook.com/%@/picture?type=large", facebookId];
-//             }
-//         }];
-//    }
+    
+    //    if (FBSession.activeSession.isOpen) {
+    //
+    //        [[FBRequest requestForMe] startWithCompletionHandler:
+    //         ^(FBRequestConnection *connection,
+    //           NSDictionary<FBGraphUser> *user,
+    //           NSError *error) {
+    //             if (!error) {
+    //                 NSString *firstName = user.first_name;
+    //                 NSString *lastName = user.last_name;
+    //                 NSString *facebookId = user.id;
+    //                 NSString *email = [user objectForKey:@"email"];
+    //                 NSString *imageUrl = [[NSString alloc] initWithFormat: @"http://graph.facebook.com/%@/picture?type=large", facebookId];
+    //             }
+    //         }];
+    //    }
 }
 
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
