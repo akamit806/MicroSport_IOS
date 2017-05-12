@@ -109,7 +109,7 @@
         HomeViewController *homeController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         homeController.title = [arrMenuTitle objectAtIndex:indexPath.row];
         UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:homeController];
-        controller.navigationBar.hidden = NO;
+        controller.navigationBar.hidden = YES;
         [self.sideMenuViewController setContentViewController:controller
                                                      animated:YES];
         [self.sideMenuViewController hideMenuViewController];

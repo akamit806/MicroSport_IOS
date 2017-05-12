@@ -226,7 +226,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     
     [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
-                                       parameters:@{@"fields": @"picture, email,first_name,gender,last_name,location{location}"}]
+                                       parameters:@{@"fields": @"picture{large}, email,first_name,gender,last_name,location{location}"}]
      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
          if (!error) {
              
@@ -243,13 +243,13 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
              [dict setValue:emailId forKey:@"email"];
              [dict setValue:userId forKey:@"user_id"];
              [dict setValue:profile forKey:@"image_url"];
+             [dict setValue:firstName forKey:@"first_name"];
+             [dict setValue:lastName forKey:@"last_name"];
+             [dict setValue:gender forKey:@"gender"];
              
              //             [dict setValue:profile forKey:@"country"];
              //             [dict setValue:profile forKey:@"age"];
              //             [dict setValue:profile forKey:@"fav_sport"];
-             [dict setValue:firstName forKey:@"first_name"];
-             [dict setValue:lastName forKey:@"last_name"];
-             [dict setValue:gender forKey:@"gender"];
              //             [dict setValue:profile forKey:@"phone"];
              //             [dict setValue:profile forKey:@"phone_code"];
              //             [dict setValue:profile forKey:@"biography"];
@@ -300,13 +300,19 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 #pragma mark TwitterLogin
 - (IBAction)twitterButtonLoginAction:(id)sender {
     
-    [SVProgressHUD showWithStatus:@"Signing In..."];
+//    [SVProgressHUD showWithStatus:@"Signing In..."];
 
     
     [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
         if (session) {
             NSLog(@"signed in as %@", [session userName]);
-            [self navigateToHomeScreen];
+            
+            TWTRAPIClient *client = [[TWTRAPIClient alloc] initWithUserID:[session userID]];
+            [client loadUserWithID:[session userID] completion:^(TWTRUser * _Nullable user, NSError * _Nullable error) {
+                NSLog(@"%@",user.profileImageURL);
+            }];
+            
+           // [self navigateToHomeScreen];
         } else {
             NSLog(@"error: %@", [error localizedDescription]);
         }

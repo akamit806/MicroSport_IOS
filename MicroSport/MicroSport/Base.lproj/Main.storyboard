@@ -625,7 +625,7 @@
                                         <rect key="frame" x="0.0" y="148" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NRL-E8-iRT" id="E4I-b1-SJ9">
-                                            <frame key="frameInset" width="375" height="49"/>
+                                            <frame key="frameInset" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xy-hW-Lyf">
@@ -711,6 +711,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="9Kl-JT-ufJ"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="TEI-Nc-g4N"/>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73B-Fw-nWC">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="bEe-hP-7MH"/>
@@ -721,13 +722,24 @@
                                     <action selector="sideMenuClicked:" destination="hbN-7M-g0V" eventType="touchUpInside" id="TOm-RZ-h2m"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwu-Fc-sUa">
+                                <frame key="frameInset" minX="192" minY="343" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="PLAY A GAME" image="play_game">
+                                    <color key="titleColor" red="0.31369495391845703" green="0.31374499201774597" blue="0.31368404626846313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Kl-JT-ufJ" firstAttribute="top" secondItem="qpi-cJ-DBZ" secondAttribute="top" id="6C0-ES-Vx2"/>
                             <constraint firstItem="P7i-pV-e8e" firstAttribute="top" secondItem="9Kl-JT-ufJ" secondAttribute="bottom" id="IsD-iV-sTU"/>
                             <constraint firstItem="73B-Fw-nWC" firstAttribute="leading" secondItem="qpi-cJ-DBZ" secondAttribute="leading" constant="5" id="Jc6-Ag-89h"/>
+                            <constraint firstItem="TEI-Nc-g4N" firstAttribute="top" secondItem="t6i-xz-Uoh" secondAttribute="bottom" constant="45" id="VHQ-7u-Lve"/>
                             <constraint firstAttribute="trailing" secondItem="9Kl-JT-ufJ" secondAttribute="trailing" id="fTn-Gv-dFm"/>
+                            <constraint firstItem="TEI-Nc-g4N" firstAttribute="centerX" secondItem="qpi-cJ-DBZ" secondAttribute="centerX" id="nZp-i1-fWk"/>
                             <constraint firstItem="9Kl-JT-ufJ" firstAttribute="leading" secondItem="qpi-cJ-DBZ" secondAttribute="leading" id="pJB-Wg-xiM"/>
                             <constraint firstItem="73B-Fw-nWC" firstAttribute="top" secondItem="qpi-cJ-DBZ" secondAttribute="top" constant="15" id="xHb-fl-9pm"/>
                         </constraints>
@@ -738,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T8a-pJ-brA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="909"/>
+            <point key="canvasLocation" x="3370" y="896"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sxl-mN-Na7">
@@ -1053,6 +1065,7 @@
         <image name="logo" width="200" height="147"/>
         <image name="logo_login" width="170" height="117"/>
         <image name="logout_btn" width="198" height="49"/>
+        <image name="play_game" width="49" height="49"/>
         <image name="profile_pic" width="103" height="100"/>
         <image name="splash" width="414" height="736"/>
         <image name="uncheck" width="30" height="29"/>
