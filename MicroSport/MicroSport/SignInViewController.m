@@ -13,12 +13,14 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <TwitterKit/TwitterKit.h>
 #import "SharedMS.h"
+#import <TwitterCore/TwitterCore.h>
 
 @interface SignInViewController ()<FBSDKLoginButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldEmail;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldPassword;
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *fbLoginButton;
+@property (weak, nonatomic) IBOutlet TWTRLogInButton *twitterLoginButton;
 @property (weak, nonatomic) IBOutlet UIImageView *fbImageView;
 
 @end
@@ -30,17 +32,12 @@
     [super viewDidLoad];
     [_textFieldEmail setAttributedPlaceholderText:@"Email"];
     
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    // Optional: Place the button in the center of your view.
-//    loginButton.center = self.view.center;
-//    [self.view addSubview:loginButton];
     _fbLoginButton.delegate = self;
     [_textFieldPassword setAttributedPlaceholderText:@"Password"];
     _fbLoginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];
     
-    
-    
+    self.twitterLoginButton.loginMethods = TWTRLoginMethodWebBased;
     
     NSArray *layoutConstraintsArr = _fbLoginButton.constraints ;
     // Iterate over array and test constraints until we find the correct one:
@@ -211,19 +208,8 @@
 didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                 error:(NSError *)error
 {
-    [SVProgressHUD dismiss];
-    //    [self navigateToHomeScreen];
-    
-    //    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-    //     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-    //
-    //         if (!error) {
-    //             NSLog(@"fetched user:%@  and Email : %@", result,result[@"email"]);
-    //         }
-    //     }];
-    
-    //    @{@"fields": @"picture, email,first_name,gender,last_name,location,picture,sports"}
-    
+
+    [SVProgressHUD showWithStatus:@"Signing In..."];
     
     [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
                                        parameters:@{@"fields": @"picture{large}, email,first_name,gender,last_name,location{location}"}]
@@ -260,6 +246,8 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
              
              
              [[SharedMS instance] setUserInfo:dict];
+             [self signinAfterFacebookTwitter:userId];
+
              [self navigateToHomeScreen];
              
              
@@ -300,25 +288,99 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 #pragma mark TwitterLogin
 - (IBAction)twitterButtonLoginAction:(id)sender {
     
-//    [SVProgressHUD showWithStatus:@"Signing In..."];
 
     
-    [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
-        if (session) {
-            NSLog(@"signed in as %@", [session userName]);
+    [[Twitter sharedInstance] logInWithMethods:TWTRLoginMethodWebBased completion:^(TWTRSession *session, NSError *error) {
+        
+        
+        if (error == nil)
+        {
+            TWTRAPIClient *client = [TWTRAPIClient clientWithCurrentUser];
+            NSURLRequest *request = [client URLRequestWithMethod:@"GET"
+                                                             URL:@"https://api.twitter.com/1.1/account/verify_credentials.json"
+                                                      parameters:@{@"include_email": @"true", @"skip_status": @"true"}
+                                                           error:nil];
             
-            TWTRAPIClient *client = [[TWTRAPIClient alloc] initWithUserID:[session userID]];
-            [client loadUserWithID:[session userID] completion:^(TWTRUser * _Nullable user, NSError * _Nullable error) {
-                NSLog(@"%@",user.profileImageURL);
+            [client sendTwitterRequest:request completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                
+                [SVProgressHUD showWithStatus:@"Signing In..."];
+                
+                NSError *jsonError;
+                NSDictionary *result = [NSJSONSerialization
+                                        JSONObjectWithData:data
+                                        options:0
+                                        error:&jsonError];
+                NSLog(@"%@",[result description]);
+                
+                
+                if (connectionError == nil)
+                {
+                    NSString *userId = [result objectForKey:@"id_str"];
+                    NSString *profile = [result objectForKey:@"profile_image_url"];
+                    NSString *firstName = [result objectForKey:@"name"];
+                    NSString *email = [result objectForKey:@"email"];
+                    
+                    
+                    
+                    
+                    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+                    [dict setValue:email forKey:@"email"];
+                    [dict setValue:userId forKey:@"user_id"];
+                    [dict setValue:profile forKey:@"image_url"];
+                    [dict setValue:firstName forKey:@"first_name"];
+                    
+                    [[SharedMS instance] setUserInfo:dict];
+                    [self signinAfterFacebookTwitter:userId];
+                    
+                }
+                
+                
+                
             }];
-            
-           // [self navigateToHomeScreen];
-        } else {
-            NSLog(@"error: %@", [error localizedDescription]);
+ 
         }
-        [SVProgressHUD dismiss];
+        
     }];
 }
+
+-(void)signinAfterFacebookTwitter:(NSString *)idValue
+{
+ 
+    __weak typeof (self) weakSelf = self;
+    [self.view endEditing:YES];
+    
+    NSString *strEmail = [[[SharedMS instance] getUserInfo] valueForKey:@"email"];
+    
+    [SVProgressHUD showWithStatus:@"Signing In..."];
+    NSDictionary *parameters = @{@"email" : strEmail, @"password" : @"", @"facebook_id" : idValue};
+    [[WebApiHandler sharedHandler] loginWithParameters:parameters success:^(NSDictionary *response) {
+        [SVProgressHUD dismiss];
+        NSLog(@"%@", response);
+        if ([[response objectForKey:@"success"] boolValue])
+        {
+            if ([response objectForKey:@"data"] != nil)
+            {
+                [[SharedMS instance] setUserInfo:[response objectForKey:@"data"]];
+            }
+            
+            [weakSelf navigateToHomeScreen];
+        }
+        else
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"User Doesn't Exist! Please try with valid Email and Password" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+            [weakSelf presentViewController:alertController animated:YES completion:nil];
+        }
+        
+    } failure:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [weakSelf presentViewController:alertController animated:YES completion:nil];
+    }];
+}
+
 #pragma mark Webservice Call
 
 

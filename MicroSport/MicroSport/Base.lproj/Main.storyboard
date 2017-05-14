@@ -232,6 +232,7 @@
                         <outlet property="fbLoginButton" destination="hT6-Cf-qCd" id="Cdf-Zg-c95"/>
                         <outlet property="textFieldEmail" destination="cvG-eg-2mf" id="dDs-Ww-SJk"/>
                         <outlet property="textFieldPassword" destination="CcC-30-kem" id="MqX-S3-muJ"/>
+                        <outlet property="twitterLoginButton" destination="Z1z-ep-Sgl" id="ZFP-MO-S1P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3p-xq-IIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,7 +626,7 @@
                                         <rect key="frame" x="0.0" y="148" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NRL-E8-iRT" id="E4I-b1-SJ9">
-                                            <frame key="frameInset" width="375" height="49.5"/>
+                                            <frame key="frameInset" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xy-hW-Lyf">
@@ -686,7 +687,7 @@
         <scene sceneID="Lo5-3B-dBn">
             <objects>
                 <navigationController storyboardIdentifier="NavigationController" navigationBarHidden="YES" id="Cd4-Lt-52W" customClass="NavigationController" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jYc-4e-jgX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jYc-4e-jgX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

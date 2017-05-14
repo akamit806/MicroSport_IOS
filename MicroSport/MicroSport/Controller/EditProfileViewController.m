@@ -74,6 +74,9 @@
     [_buttonMale setSelected:YES];
     [_buttonFemale setSelected:NO];
     
+    [self.btnProfileImage.layer setCornerRadius:self.btnProfileImage.frame.size.width/2];
+    self.btnProfileImage.clipsToBounds = YES;
+    
 }
 
 #pragma mark Action
