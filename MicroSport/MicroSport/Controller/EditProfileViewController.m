@@ -74,8 +74,8 @@
     [_buttonMale setSelected:YES];
     [_buttonFemale setSelected:NO];
     
-    [self.btnProfileImage.layer setCornerRadius:self.btnProfileImage.frame.size.width/2];
-    self.btnProfileImage.clipsToBounds = YES;
+//    [self.btnProfileImage.layer setCornerRadius:self.btnProfileImage.frame.size.width/2];
+//    self.btnProfileImage.clipsToBounds = YES;
     
 }
 
@@ -109,6 +109,7 @@
     NSString *profile = [userData objectForKey:@"image_url"];
 //    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,profile];
 
+    if (profile != nil && profile.length>0)
     [self.btnProfileImage setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:profile]];
     
 }

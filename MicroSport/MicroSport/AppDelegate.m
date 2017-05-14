@@ -48,7 +48,7 @@
         
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UINavigationController *homeController = [storyboard instantiateViewControllerWithIdentifier:@"EditProfileViewController"];
+            UINavigationController *homeController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
             LeftViewController *leftController = (LeftViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
         
             RESideMenu *sideMenu = [[RESideMenu alloc] initWithContentViewController:homeController leftMenuViewController:leftController rightMenuViewController:nil];
