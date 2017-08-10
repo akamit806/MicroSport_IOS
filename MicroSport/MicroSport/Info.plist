@@ -29,7 +29,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>twitterkit-PpGQpfKDrlWk0Tri6Bxmvpvf1</string>
+				<string>twitterkit-hLfC5fVrY6szuDCgTxA7BilFv</string>
 			</array>
 		</dict>
 	</array>
@@ -38,16 +38,16 @@
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>4294643b3a4d993cd6fd9bd7e75ef444393271e1</string>
+		<string>hLfC5fVrY6szuDCgTxA7BilFv</string>
 		<key>Kits</key>
 		<array>
 			<dict>
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>PpGQpfKDrlWk0Tri6Bxmvpvf1</string>
+					<string>hLfC5fVrY6szuDCgTxA7BilFv</string>
 					<key>consumerSecret</key>
-					<string>V6J5LuYIfoCyqnOD6dNZJP9ofOOWkaCLbwToJgJbFyqpmlWRuF</string>
+					<string>6Rq3EdZnXSuUj613w1qmS5qDkCkzkDF4OEUXa7wfqpPk3MFTiU</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>

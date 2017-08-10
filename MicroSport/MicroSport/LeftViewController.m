@@ -47,7 +47,7 @@
         
         if ([self.lblUserName.text containsString:@"null"])
         {
-            self.lblUserName.text = [userInfo objectForKey:@"email"];
+            self.lblUserName.text = [self.lblUserName.text stringByReplacingOccurrencesOfString:@"(null)" withString:@""];
         }
     }
     
@@ -109,7 +109,7 @@
         HomeViewController *homeController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         homeController.title = [arrMenuTitle objectAtIndex:indexPath.row];
         UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:homeController];
-        controller.navigationBar.hidden = NO;
+        controller.navigationBar.hidden = YES;
         [self.sideMenuViewController setContentViewController:controller
                                                      animated:YES];
         [self.sideMenuViewController hideMenuViewController];
@@ -127,7 +127,6 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *signInVc = [storyboard instantiateViewControllerWithIdentifier:@"SignInViewController"];
     UIWindow *keyWindow = [[[UIApplication sharedApplication] delegate] window];
-    [[SharedMS instance] setUserInfo:nil];
 
     keyWindow.rootViewController = signInVc;
     [keyWindow makeKeyAndVisible];
@@ -144,6 +143,15 @@
     
     NSDictionary *userInfo = [[SharedMS instance] getUserInfo];
     [[[Twitter sharedInstance] sessionStore] logOutUserID:[userInfo objectForKey:@"user_id"]];
+    
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *each in cookieStorage.cookies) {
+        // put a check here to clear cookie url which starts with twitter and then delete it
+        [cookieStorage deleteCookie:each];
+    }
+    
+    [[SharedMS instance] setUserInfo:nil];
+
 }
 
 

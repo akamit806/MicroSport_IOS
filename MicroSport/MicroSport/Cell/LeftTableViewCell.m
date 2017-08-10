@@ -1,10 +1,4 @@
-//
-//  LeftTableViewCell.m
-//  MicroSport
-//
-//  Created by Piyush Jaiswal on 05/05/17.
-//  Copyright © 2017 Hashim Khan. All rights reserved.
-//
+
 
 #import "LeftTableViewCell.h"
 

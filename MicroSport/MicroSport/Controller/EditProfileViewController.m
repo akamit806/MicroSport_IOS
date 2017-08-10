@@ -1,10 +1,4 @@
-//
-//  EditProfileViewController.m
-//  MicroSport
-//
-//  Created by Piyush Jaiswal on 05/05/17.
-//  Copyright © 2017 Hashim Khan. All rights reserved.
-//
+
 
 #import "EditProfileViewController.h"
 #import "TextFieldPadding.h"
@@ -16,6 +10,7 @@
 #import "NSString+PJR.h"
 #import "SVProgressHUD.h"
 #import "SharedMS.h"
+#import "UIButton+AFNetworking.h"
 
 
 @interface EditProfileViewController ()
@@ -50,6 +45,7 @@
     });
     [self setupView];
     [self editButtonAction:self.btnEdit];
+    [self populateData:[[SharedMS instance] getUserInfo]];
 }
 
 -(void)setupView
@@ -72,8 +68,9 @@
     [_buttonMale setSelected:YES];
     [_buttonFemale setSelected:NO];
     
-    NSString *string = @"By Signing up you agree to microsport terms & conditions";
-    NSDictionary *attributes = @{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont systemFontOfSize:17]};
+//    [self.btnProfileImage.layer setCornerRadius:self.btnProfileImage.frame.size.width/2];
+//    self.btnProfileImage.clipsToBounds = YES;
+    
 }
 
 #pragma mark Action
@@ -104,9 +101,10 @@
     }
     
     NSString *profile = [userData objectForKey:@"image_url"];
-    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,profile];
+//    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",kAPIBaseURL,profile];
 
-    
+    if (profile != nil && profile.length>0)
+    [self.btnProfileImage setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:profile]];
     
 }
 

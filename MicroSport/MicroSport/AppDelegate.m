@@ -32,7 +32,7 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
-    [[Twitter sharedInstance] startWithConsumerKey:@"PpGQpfKDrlWk0Tri6Bxmvpvf1" consumerSecret:@"V6J5LuYIfoCyqnOD6dNZJP9ofOOWkaCLbwToJgJbFyqpmlWRuF"];
+    [[Twitter sharedInstance] startWithConsumerKey:@"hLfC5fVrY6szuDCgTxA7BilFv" consumerSecret:@"6Rq3EdZnXSuUj613w1qmS5qDkCkzkDF4OEUXa7wfqpPk3MFTiU"];
     [Fabric with:@[[Twitter class]]];
     
     
@@ -48,7 +48,7 @@
         
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UINavigationController *homeController = [storyboard instantiateViewControllerWithIdentifier:@"EditProfileViewController"];
+            UINavigationController *homeController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
             LeftViewController *leftController = (LeftViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
         
             RESideMenu *sideMenu = [[RESideMenu alloc] initWithContentViewController:homeController leftMenuViewController:leftController rightMenuViewController:nil];
