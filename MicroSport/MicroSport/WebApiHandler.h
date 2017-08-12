@@ -1,6 +1,6 @@
 //
 //  WebApiHandler.h
-//  AppWEAR
+//  MicroSport
 //
 //  Created by John on 20/11/16.
 //  Copyright © 2016 John. All rights reserved.

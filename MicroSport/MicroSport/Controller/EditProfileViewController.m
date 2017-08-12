@@ -1,4 +1,10 @@
-
+//
+//  CreateTeamViewController.h
+//  MicroSport
+//
+//  Created by Satya Kumar on 8/12/17.
+//  Copyright © 2017 Hashim Khan. All rights reserved.
+//
 
 #import "EditProfileViewController.h"
 #import "TextFieldPadding.h"
@@ -11,6 +17,7 @@
 #import "SVProgressHUD.h"
 #import "SharedMS.h"
 #import "UIButton+AFNetworking.h"
+#import "UIViewController+AMSlideMenu.h"
 
 
 @interface EditProfileViewController ()
@@ -41,7 +48,7 @@
     [super viewDidLoad];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self callwebserviceForGetUserProfile];
+       // [self callwebserviceForGetUserProfile];
     });
     [self setupView];
     [self editButtonAction:self.btnEdit];
@@ -109,7 +116,8 @@
 }
 
 - (IBAction)sideMenuClicked:(id)sender {
-    [self.sideMenuViewController presentLeftMenuViewController];
+    
+     [self.mainSlideMenu openLeftMenu];
 }
 
 - (IBAction)maleClicked:(UIButton *)sender

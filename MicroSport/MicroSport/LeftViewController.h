@@ -8,8 +8,13 @@
 
 #import "BaseViewController.h"
 
-@interface LeftViewController : BaseViewController
+#import "AMSlideMenuLeftTableViewController.h"
+#import "AsyncImageView.h"
+
+@interface LeftViewController : AMSlideMenuLeftTableViewController //BaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *lblUserName;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewProfile;
+
+@property (weak, nonatomic) IBOutlet AsyncImageView *profileImgView;
 
 @end

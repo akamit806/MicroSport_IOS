@@ -31,8 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    arrMenuTitle = [[NSMutableArray alloc] initWithObjects:@"Home",@"Organize game",@"Organize Team",@"Message",@"Profile",@"Notification",@"Faq",@"Terms", nil];
-    arrMenuImages = [[NSMutableArray alloc] initWithObjects:@"home",@"game",@"team",@"messages",@"profile",@"notifications",@"faq",@"terms", nil];
+    arrMenuTitle = [[NSMutableArray alloc] initWithObjects:@"Home",@"My Microsport",@"Friends",@"Messages",@"Notifications",@"Settings", @"FAQ",@"Terms", nil];
+    arrMenuImages = [[NSMutableArray alloc] initWithObjects:@"home",@"mymicro",@"friends",@"messages",@"notifications",@"setting", @"faq",@"terms", nil];
 
     
     NSDictionary *userInfo = [[SharedMS instance] getUserInfo];
@@ -95,15 +95,8 @@
     if (indexPath.row == 4)
     {
         
-        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"EditProfileViewController"]];
-        controller.navigationBar.hidden = YES;
-        [self.sideMenuViewController setContentViewController:controller
-                                                     animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
-        [self.navigationController setNavigationBarHidden:YES];
     }
     else
-        
     {
         
         HomeViewController *homeController = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
@@ -154,6 +147,15 @@
 
 }
 
+- (IBAction)profileImageClicked:(id)sender{
+
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"EditProfileViewController"]];
+    controller.navigationBar.hidden = YES;
+    [self.sideMenuViewController setContentViewController:controller
+                                                 animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 /*
 #pragma mark - Navigation

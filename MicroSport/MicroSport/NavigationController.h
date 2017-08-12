@@ -1,6 +1,6 @@
 //
 //  NavigationController.h
-//  AppWEAR
+//  MicroSport
 //
 //  Created by John on 02/12/16.
 //  Copyright © 2016 John. All rights reserved.

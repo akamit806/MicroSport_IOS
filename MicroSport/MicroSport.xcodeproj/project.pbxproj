@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01276ADE1F3F6A6C00B8893B /* CreateTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276ADD1F3F6A6C00B8893B /* CreateTeamViewController.m */; };
+		01276AF01F3F772600B8893B /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AE21F3F772600B8893B /* AMSlideMenuContentSegue.m */; };
+		01276AF11F3F772600B8893B /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AE41F3F772600B8893B /* AMSlideMenuLeftMenuSegue.m */; };
+		01276AF21F3F772600B8893B /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AE61F3F772600B8893B /* AMSlideMenuLeftTableViewController.m */; };
+		01276AF31F3F772600B8893B /* AMSlideMenuMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AE81F3F772600B8893B /* AMSlideMenuMainViewController.m */; };
+		01276AF41F3F772600B8893B /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AEB1F3F772600B8893B /* AMSlideMenuRightMenuSegue.m */; };
+		01276AF51F3F772600B8893B /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AED1F3F772600B8893B /* AMSlideMenuRightTableViewController.m */; };
+		01276AF61F3F772600B8893B /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AEF1F3F772600B8893B /* UIViewController+AMSlideMenu.m */; };
+		01276AFB1F3F777300B8893B /* ETLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AFA1F3F777300B8893B /* ETLeftMenuViewController.m */; };
+		01276AFF1F3F778800B8893B /* ETMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AFE1F3F778800B8893B /* ETMenuViewController.m */; };
+		01276B031F3F77CB00B8893B /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B021F3F77CB00B8893B /* AsyncImageView.m */; };
+		01276B071F3F788900B8893B /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B061F3F788900B8893B /* CommonUtility.m */; };
+		01276B0B1F3F78D200B8893B /* NSDictionary+IgnoreNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */; };
 		54254DE41EB3BBF200990719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE31EB3BBF200990719 /* main.m */; };
 		54254DE71EB3BBF200990719 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE61EB3BBF200990719 /* AppDelegate.m */; };
 		54254DEA1EB3BBF200990719 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE91EB3BBF200990719 /* SplashViewController.m */; };
@@ -77,6 +90,33 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01276ADC1F3F6A6C00B8893B /* CreateTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateTeamViewController.h; path = CreateTeam/CreateTeamViewController.h; sourceTree = "<group>"; };
+		01276ADD1F3F6A6C00B8893B /* CreateTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateTeamViewController.m; path = CreateTeam/CreateTeamViewController.m; sourceTree = "<group>"; };
+		01276AE11F3F772600B8893B /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
+		01276AE21F3F772600B8893B /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
+		01276AE31F3F772600B8893B /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
+		01276AE41F3F772600B8893B /* AMSlideMenuLeftMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftMenuSegue.m; sourceTree = "<group>"; };
+		01276AE51F3F772600B8893B /* AMSlideMenuLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftTableViewController.h; sourceTree = "<group>"; };
+		01276AE61F3F772600B8893B /* AMSlideMenuLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftTableViewController.m; sourceTree = "<group>"; };
+		01276AE71F3F772600B8893B /* AMSlideMenuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuMainViewController.h; sourceTree = "<group>"; };
+		01276AE81F3F772600B8893B /* AMSlideMenuMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuMainViewController.m; sourceTree = "<group>"; };
+		01276AE91F3F772600B8893B /* AMSlideMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuProtocols.h; sourceTree = "<group>"; };
+		01276AEA1F3F772600B8893B /* AMSlideMenuRightMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightMenuSegue.h; sourceTree = "<group>"; };
+		01276AEB1F3F772600B8893B /* AMSlideMenuRightMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightMenuSegue.m; sourceTree = "<group>"; };
+		01276AEC1F3F772600B8893B /* AMSlideMenuRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightTableViewController.h; sourceTree = "<group>"; };
+		01276AED1F3F772600B8893B /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
+		01276AEE1F3F772600B8893B /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
+		01276AEF1F3F772600B8893B /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
+		01276AF91F3F777300B8893B /* ETLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLeftMenuViewController.h; sourceTree = "<group>"; };
+		01276AFA1F3F777300B8893B /* ETLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETLeftMenuViewController.m; sourceTree = "<group>"; };
+		01276AFD1F3F778800B8893B /* ETMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMenuViewController.h; sourceTree = "<group>"; };
+		01276AFE1F3F778800B8893B /* ETMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETMenuViewController.m; sourceTree = "<group>"; };
+		01276B011F3F77CB00B8893B /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		01276B021F3F77CB00B8893B /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		01276B051F3F788900B8893B /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		01276B061F3F788900B8893B /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
+		01276B091F3F78D200B8893B /* NSDictionary+IgnoreNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+IgnoreNull.h"; sourceTree = "<group>"; };
+		01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IgnoreNull.m"; sourceTree = "<group>"; };
 		0AD1C287B25FF79E4B2A7563 /* libPods-MicroSport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MicroSport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54254DDF1EB3BBF200990719 /* MicroSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54254DE31EB3BBF200990719 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -174,8 +214,8 @@
 		54790AF31EB675AC00BD33EC /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		54790AF51EB6767100BD33EC /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		54790AF61EB6767100BD33EC /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
-		AB1DF3F81ED0BEF9001FE937 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
-		AB1DF3F91ED0BEF9001FE937 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		AB1DF3F81ED0BEF9001FE937 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgotPasswordViewController.h; path = Controller/ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		AB1DF3F91ED0BEF9001FE937 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgotPasswordViewController.m; path = Controller/ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		AB29ED3A1EBCDE1E009B016F /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
 		AB29ED3B1EBCDE1E009B016F /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
 		AB4312D41EBC351E00AA1ED3 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Pods/TwitterKit/iOS/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -227,6 +267,164 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01276AD51F3F69CB00B8893B /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				54254DE51EB3BBF200990719 /* AppDelegate.h */,
+				54254DE61EB3BBF200990719 /* AppDelegate.m */,
+			);
+			name = Appdelegate;
+			sourceTree = "<group>";
+		};
+		01276AD61F3F69E300B8893B /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54267FBE1EB5120D00547FB0 /* BaseViewController.h */,
+				54267FBF1EB5120D00547FB0 /* BaseViewController.m */,
+			);
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
+		01276AD71F3F69F300B8893B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				54254DE81EB3BBF200990719 /* SplashViewController.h */,
+				54254DE91EB3BBF200990719 /* SplashViewController.m */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
+		01276AD81F3F69FC00B8893B /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				54267FC11EB51A4100547FB0 /* SignInViewController.h */,
+				54267FC21EB51A4100547FB0 /* SignInViewController.m */,
+			);
+			name = Signin;
+			sourceTree = "<group>";
+		};
+		01276AD91F3F6A0600B8893B /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				547825131EB5EE5600A33E4F /* SignUpViewController.h */,
+				547825141EB5EE5600A33E4F /* SignUpViewController.m */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		01276ADA1F3F6A1000B8893B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				54790AF21EB675AC00BD33EC /* HomeViewController.h */,
+				54790AF31EB675AC00BD33EC /* HomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		01276ADB1F3F6A1700B8893B /* LeftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54790AF51EB6767100BD33EC /* LeftViewController.h */,
+				54790AF61EB6767100BD33EC /* LeftViewController.m */,
+			);
+			name = LeftViewController;
+			sourceTree = "<group>";
+		};
+		01276ADF1F3F6A7200B8893B /* CreateTeam */ = {
+			isa = PBXGroup;
+			children = (
+				01276ADC1F3F6A6C00B8893B /* CreateTeamViewController.h */,
+				01276ADD1F3F6A6C00B8893B /* CreateTeamViewController.m */,
+			);
+			name = CreateTeam;
+			sourceTree = "<group>";
+		};
+		01276AE01F3F6AE500B8893B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				AB1DF3F81ED0BEF9001FE937 /* ForgotPasswordViewController.h */,
+				AB1DF3F91ED0BEF9001FE937 /* ForgotPasswordViewController.m */,
+			);
+			name = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		01276AF71F3F772E00B8893B /* AMSlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				01276AE11F3F772600B8893B /* AMSlideMenuContentSegue.h */,
+				01276AE21F3F772600B8893B /* AMSlideMenuContentSegue.m */,
+				01276AE31F3F772600B8893B /* AMSlideMenuLeftMenuSegue.h */,
+				01276AE41F3F772600B8893B /* AMSlideMenuLeftMenuSegue.m */,
+				01276AE51F3F772600B8893B /* AMSlideMenuLeftTableViewController.h */,
+				01276AE61F3F772600B8893B /* AMSlideMenuLeftTableViewController.m */,
+				01276AE71F3F772600B8893B /* AMSlideMenuMainViewController.h */,
+				01276AE81F3F772600B8893B /* AMSlideMenuMainViewController.m */,
+				01276AE91F3F772600B8893B /* AMSlideMenuProtocols.h */,
+				01276AEA1F3F772600B8893B /* AMSlideMenuRightMenuSegue.h */,
+				01276AEB1F3F772600B8893B /* AMSlideMenuRightMenuSegue.m */,
+				01276AEC1F3F772600B8893B /* AMSlideMenuRightTableViewController.h */,
+				01276AED1F3F772600B8893B /* AMSlideMenuRightTableViewController.m */,
+				01276AEE1F3F772600B8893B /* UIViewController+AMSlideMenu.h */,
+				01276AEF1F3F772600B8893B /* UIViewController+AMSlideMenu.m */,
+			);
+			name = AMSlideMenu;
+			sourceTree = "<group>";
+		};
+		01276AF81F3F774600B8893B /* SlideMenuClass */ = {
+			isa = PBXGroup;
+			children = (
+				01276B001F3F778C00B8893B /* Menu */,
+				01276AFC1F3F777900B8893B /* LeftMenu */,
+			);
+			name = SlideMenuClass;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		01276AFC1F3F777900B8893B /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				01276AF91F3F777300B8893B /* ETLeftMenuViewController.h */,
+				01276AFA1F3F777300B8893B /* ETLeftMenuViewController.m */,
+			);
+			name = LeftMenu;
+			sourceTree = "<group>";
+		};
+		01276B001F3F778C00B8893B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				01276AFD1F3F778800B8893B /* ETMenuViewController.h */,
+				01276AFE1F3F778800B8893B /* ETMenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		01276B041F3F77D200B8893B /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				01276B011F3F77CB00B8893B /* AsyncImageView.h */,
+				01276B021F3F77CB00B8893B /* AsyncImageView.m */,
+			);
+			name = AsyncImageView;
+			sourceTree = "<group>";
+		};
+		01276B081F3F788E00B8893B /* CommonClasses */ = {
+			isa = PBXGroup;
+			children = (
+				01276B051F3F788900B8893B /* CommonUtility.h */,
+				01276B061F3F788900B8893B /* CommonUtility.m */,
+			);
+			name = CommonClasses;
+			sourceTree = "<group>";
+		};
+		01276B0C1F3F78D700B8893B /* Catagory */ = {
+			isa = PBXGroup;
+			children = (
+				01276B091F3F78D200B8893B /* NSDictionary+IgnoreNull.h */,
+				01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */,
+			);
+			name = Catagory;
+			sourceTree = "<group>";
+		};
 		48426FF79ABE2A4BAF08E696 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,23 +457,21 @@
 		54254DE11EB3BBF200990719 /* MicroSport */ = {
 			isa = PBXGroup;
 			children = (
-				ABD141001EBCF51B0069E11F /* Controller */,
+				01276B0C1F3F78D700B8893B /* Catagory */,
+				01276B081F3F788E00B8893B /* CommonClasses */,
+				01276AF81F3F774600B8893B /* SlideMenuClass */,
+				547825121EB5EA8A00A33E4F /* Library */,
+				01276AE01F3F6AE500B8893B /* ForgotPassword */,
+				01276ADF1F3F6A7200B8893B /* CreateTeam */,
+				ABD141001EBCF51B0069E11F /* Profile */,
 				AB29ED391EBCDDE7009B016F /* Cell */,
-				547825121EB5EA8A00A33E4F /* Custom Classes */,
-				54254DE51EB3BBF200990719 /* AppDelegate.h */,
-				54254DE61EB3BBF200990719 /* AppDelegate.m */,
-				54267FBE1EB5120D00547FB0 /* BaseViewController.h */,
-				54267FBF1EB5120D00547FB0 /* BaseViewController.m */,
-				54254DE81EB3BBF200990719 /* SplashViewController.h */,
-				54254DE91EB3BBF200990719 /* SplashViewController.m */,
-				54267FC11EB51A4100547FB0 /* SignInViewController.h */,
-				54267FC21EB51A4100547FB0 /* SignInViewController.m */,
-				547825131EB5EE5600A33E4F /* SignUpViewController.h */,
-				547825141EB5EE5600A33E4F /* SignUpViewController.m */,
-				54790AF21EB675AC00BD33EC /* HomeViewController.h */,
-				54790AF31EB675AC00BD33EC /* HomeViewController.m */,
-				54790AF51EB6767100BD33EC /* LeftViewController.h */,
-				54790AF61EB6767100BD33EC /* LeftViewController.m */,
+				01276AD51F3F69CB00B8893B /* Appdelegate */,
+				01276AD61F3F69E300B8893B /* BaseViewController */,
+				01276AD71F3F69F300B8893B /* Splash */,
+				01276AD81F3F69FC00B8893B /* Signin */,
+				01276AD91F3F6A0600B8893B /* Signup */,
+				01276ADA1F3F6A1000B8893B /* Home */,
+				01276ADB1F3F6A1700B8893B /* LeftViewController */,
 				54254DEB1EB3BBF200990719 /* Main.storyboard */,
 				54254DEE1EB3BBF200990719 /* Assets.xcassets */,
 				54254DF01EB3BBF200990719 /* LaunchScreen.storyboard */,
@@ -415,9 +611,11 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
-		547825121EB5EA8A00A33E4F /* Custom Classes */ = {
+		547825121EB5EA8A00A33E4F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				01276B041F3F77D200B8893B /* AsyncImageView */,
+				01276AF71F3F772E00B8893B /* AMSlideMenu */,
 				54790AE81EB6749F00BD33EC /* RESideMenu */,
 				54790ACD1EB6603800BD33EC /* WebApiHandler */,
 				54790AC91EB656FA00BD33EC /* FRHyperLabel */,
@@ -433,7 +631,7 @@
 				AB5B9F381EBEDB0700FF5DD2 /* SharedMS.h */,
 				AB5B9F391EBEDB0700FF5DD2 /* SharedMS.m */,
 			);
-			name = "Custom Classes";
+			name = Library;
 			sourceTree = "<group>";
 		};
 		54790AC91EB656FA00BD33EC /* FRHyperLabel */ = {
@@ -538,14 +736,13 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
-		ABD141001EBCF51B0069E11F /* Controller */ = {
+		ABD141001EBCF51B0069E11F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				ABD141011EBCF5570069E11F /* EditProfileViewController.h */,
 				ABD141021EBCF5570069E11F /* EditProfileViewController.m */,
-				AB1DF3F81ED0BEF9001FE937 /* ForgotPasswordViewController.h */,
-				AB1DF3F91ED0BEF9001FE937 /* ForgotPasswordViewController.m */,
 			);
+			name = Profile;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -706,6 +903,7 @@
 				547824F71EB5E8D800A33E4F /* IQToolbar.m in Sources */,
 				54790AF41EB675AC00BD33EC /* HomeViewController.m in Sources */,
 				547824F81EB5E8D800A33E4F /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				01276B031F3F77CB00B8893B /* AsyncImageView.m in Sources */,
 				547824EF1EB5E8D800A33E4F /* IQUIViewController+Additions.m in Sources */,
 				54254DEA1EB3BBF200990719 /* SplashViewController.m in Sources */,
 				54790AF01EB6749F00BD33EC /* RESideMenu.m in Sources */,
@@ -713,9 +911,12 @@
 				54790AE51EB6604C00BD33EC /* AFURLSessionManager.m in Sources */,
 				AB5976891EBF75C80040967A /* UIRefreshControl+AFNetworking.m in Sources */,
 				54790AE01EB6604C00BD33EC /* AFHTTPSessionManager.m in Sources */,
+				01276B0B1F3F78D200B8893B /* NSDictionary+IgnoreNull.m in Sources */,
+				01276AF11F3F772600B8893B /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				547825081EB5EA0500A33E4F /* NSString+PJR.m in Sources */,
 				5478250C1EB5EA0500A33E4F /* SVProgressHUD.m in Sources */,
 				AB5976861EBF75C80040967A /* UIButton+AFNetworking.m in Sources */,
+				01276AF61F3F772600B8893B /* UIViewController+AMSlideMenu.m in Sources */,
 				547825111EB5EA5900A33E4F /* Reachability.m in Sources */,
 				547824F61EB5E8D800A33E4F /* IQTitleBarButtonItem.m in Sources */,
 				AB5976841EBF75C80040967A /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -723,12 +924,14 @@
 				547824F31EB5E8D800A33E4F /* IQTextView.m in Sources */,
 				54267FC01EB5120D00547FB0 /* BaseViewController.m in Sources */,
 				547825091EB5EA0500A33E4F /* SVIndefiniteAnimatedView.m in Sources */,
+				01276AF41F3F772600B8893B /* AMSlideMenuRightMenuSegue.m in Sources */,
 				547824EE1EB5E8D800A33E4F /* IQUIView+Hierarchy.m in Sources */,
 				AB59768A1EBF75C80040967A /* UIWebView+AFNetworking.m in Sources */,
 				AB5976831EBF75C80040967A /* AFImageDownloader.m in Sources */,
 				54790AE61EB6604C00BD33EC /* AppConstants.m in Sources */,
 				AB5976871EBF75C80040967A /* UIImageView+AFNetworking.m in Sources */,
 				AB5976851EBF75C80040967A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				01276AFF1F3F778800B8893B /* ETMenuViewController.m in Sources */,
 				547824F41EB5E8D800A33E4F /* IQBarButtonItem.m in Sources */,
 				54790AE41EB6604C00BD33EC /* AFURLResponseSerialization.m in Sources */,
 				54267FBD1EB5108300547FB0 /* NavigationController.m in Sources */,
@@ -738,16 +941,23 @@
 				AB29ED3C1EBCDE1E009B016F /* LeftTableViewCell.m in Sources */,
 				547824F21EB5E8D800A33E4F /* IQKeyboardReturnKeyHandler.m in Sources */,
 				5478250D1EB5EA0500A33E4F /* SVRadialGradientLayer.m in Sources */,
+				01276ADE1F3F6A6C00B8893B /* CreateTeamViewController.m in Sources */,
 				54790AEF1EB6749F00BD33EC /* RECommonFunctions.m in Sources */,
+				01276AFB1F3F777300B8893B /* ETLeftMenuViewController.m in Sources */,
+				01276AF51F3F772600B8893B /* AMSlideMenuRightTableViewController.m in Sources */,
+				01276AF21F3F772600B8893B /* AMSlideMenuLeftTableViewController.m in Sources */,
 				ABD141031EBCF5570069E11F /* EditProfileViewController.m in Sources */,
 				54267FC31EB51A4100547FB0 /* SignInViewController.m in Sources */,
+				01276AF01F3F772600B8893B /* AMSlideMenuContentSegue.m in Sources */,
 				547824F01EB5E8D800A33E4F /* IQUIWindow+Hierarchy.m in Sources */,
+				01276AF31F3F772600B8893B /* AMSlideMenuMainViewController.m in Sources */,
 				547824C51EB5E1F700A33E4F /* TextFieldPadding.m in Sources */,
 				547824EB1EB5E8D800A33E4F /* IQNSArray+Sort.m in Sources */,
 				54790AF11EB6749F00BD33EC /* UIViewController+RESideMenu.m in Sources */,
 				54790AE71EB6604C00BD33EC /* WebApiHandler.m in Sources */,
 				54790AE31EB6604C00BD33EC /* AFURLRequestSerialization.m in Sources */,
 				54267FC61EB51D5000547FB0 /* UIColor+AppColor.m in Sources */,
+				01276B071F3F788900B8893B /* CommonUtility.m in Sources */,
 				54790AF71EB6767100BD33EC /* LeftViewController.m in Sources */,
 				54254DE41EB3BBF200990719 /* main.m in Sources */,
 				54790AE21EB6604C00BD33EC /* AFSecurityPolicy.m in Sources */,

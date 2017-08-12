@@ -1,6 +1,6 @@
 //
 //  AppConstants.h
-//  AppWEAR
+//  MicroSport
 //
 //  Created by John on 21/11/16.
 //  Copyright © 2016 John. All rights reserved.

@@ -16,6 +16,8 @@
 #import "LeftViewController.h"
 #import "EditProfileViewController.h"
 #import "SharedMS.h"
+#import "ETMenuViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -43,25 +45,32 @@
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
 
     
-    if ([[SharedMS instance] getUserInfo] != nil)
+    //if ([[SharedMS instance] getUserInfo] != nil)
+     if ([[SharedMS instance] getUserInfo] == nil)
     {
         
+        //--- Navigate to home screen ---
+        UIStoryboard *mStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ETMenuViewController *controller=[mStoryboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
+        self.window.rootViewController = controller;
         
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UINavigationController *homeController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-            LeftViewController *leftController = (LeftViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
+         return NO;
         
-            RESideMenu *sideMenu = [[RESideMenu alloc] initWithContentViewController:homeController leftMenuViewController:leftController rightMenuViewController:nil];
-            sideMenu.contentViewShadowColor = [UIColor blackColor];
-            sideMenu.contentViewShadowOffset = CGSizeMake(0, 0);
-            sideMenu.contentViewShadowOpacity = 0.6;
-            sideMenu.contentViewInPortraitOffsetCenterX = 100;
-            sideMenu.contentViewShadowRadius = 12;
-            sideMenu.contentViewShadowEnabled = YES;
-            sideMenu.scaleContentView = NO;
-            sideMenu.scaleMenuView = NO;
-            self.window.rootViewController = sideMenu;
-            [self.window makeKeyAndVisible];
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//            UINavigationController *homeController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+//            LeftViewController *leftController = (LeftViewController *)[storyboard instantiateViewControllerWithIdentifier:@"LeftViewController"];
+//        
+//            RESideMenu *sideMenu = [[RESideMenu alloc] initWithContentViewController:homeController leftMenuViewController:leftController rightMenuViewController:nil];
+//            sideMenu.contentViewShadowColor = [UIColor blackColor];
+//            sideMenu.contentViewShadowOffset = CGSizeMake(0, 0);
+//            sideMenu.contentViewShadowOpacity = 0.6;
+//            sideMenu.contentViewInPortraitOffsetCenterX = 100;
+//            sideMenu.contentViewShadowRadius = 12;
+//            sideMenu.contentViewShadowEnabled = YES;
+//            sideMenu.scaleContentView = NO;
+//            sideMenu.scaleMenuView = NO;
+//            self.window.rootViewController = sideMenu;
+//            [self.window makeKeyAndVisible];
         
         }
     
@@ -122,4 +131,16 @@
     
     return NO;
 }
+
+- (void) logout{
+    
+    //--- Remove User Data ---
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"userdata"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+//    NSString *user_id = [[[CommonUtility sharedInstance].userDictionary valueForKey:@"data"] valueForKey:@"user_id"];
+//    
+//    [self logoutAPI:user_id];
+}
+
 @end

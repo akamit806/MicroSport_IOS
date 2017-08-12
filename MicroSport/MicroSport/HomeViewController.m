@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "CreateTeamViewController.h"
+#import "UIViewController+AMSlideMenu.h"
 
 @interface HomeViewController ()
 
@@ -26,9 +28,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark IBActions
 - (IBAction)sideMenuClicked:(id)sender {
-    [self.sideMenuViewController presentLeftMenuViewController];
+   [self.mainSlideMenu openLeftMenu];
 }
+
+
 /*
 #pragma mark - Navigation
 

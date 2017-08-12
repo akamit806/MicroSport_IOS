@@ -1,6 +1,6 @@
 //
 //  UIColor+AppColor.m
-//  AppWEAR
+//  MicroSport
 //
 //  Created by John on 05/03/17.
 //  Copyright © 2017 John. All rights reserved.
