@@ -48,7 +48,7 @@
     [super viewDidLoad];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-       // [self callwebserviceForGetUserProfile];
+        //[self callwebserviceForGetUserProfile];
     });
     [self setupView];
     [self editButtonAction:self.btnEdit];

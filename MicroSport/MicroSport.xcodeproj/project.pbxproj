@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010F81831F4382700005F706 /* MyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F81821F4382700005F706 /* MyTextField.m */; };
+		010F81861F4382C50005F706 /* UIColor+AppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F81851F4382C50005F706 /* UIColor+AppColor.m */; };
 		01276ADE1F3F6A6C00B8893B /* CreateTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276ADD1F3F6A6C00B8893B /* CreateTeamViewController.m */; };
 		01276AF01F3F772600B8893B /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AE21F3F772600B8893B /* AMSlideMenuContentSegue.m */; };
 		01276AF11F3F772600B8893B /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276AE41F3F772600B8893B /* AMSlideMenuLeftMenuSegue.m */; };
@@ -90,6 +92,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010F81811F4382700005F706 /* MyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTextField.h; sourceTree = "<group>"; };
+		010F81821F4382700005F706 /* MyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTextField.m; sourceTree = "<group>"; };
+		010F81841F4382C50005F706 /* UIColor+AppColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColor.h"; sourceTree = "<group>"; };
+		010F81851F4382C50005F706 /* UIColor+AppColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColor.m"; sourceTree = "<group>"; };
 		01276ADC1F3F6A6C00B8893B /* CreateTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateTeamViewController.h; path = CreateTeam/CreateTeamViewController.h; sourceTree = "<group>"; };
 		01276ADD1F3F6A6C00B8893B /* CreateTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateTeamViewController.m; path = CreateTeam/CreateTeamViewController.m; sourceTree = "<group>"; };
 		01276AE11F3F772600B8893B /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
@@ -419,6 +425,10 @@
 		01276B0C1F3F78D700B8893B /* Catagory */ = {
 			isa = PBXGroup;
 			children = (
+				010F81841F4382C50005F706 /* UIColor+AppColor.h */,
+				010F81851F4382C50005F706 /* UIColor+AppColor.m */,
+				010F81811F4382700005F706 /* MyTextField.h */,
+				010F81821F4382700005F706 /* MyTextField.m */,
 				01276B091F3F78D200B8893B /* NSDictionary+IgnoreNull.h */,
 				01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */,
 			);
@@ -908,6 +918,7 @@
 				54254DEA1EB3BBF200990719 /* SplashViewController.m in Sources */,
 				54790AF01EB6749F00BD33EC /* RESideMenu.m in Sources */,
 				547824EC1EB5E8D800A33E4F /* IQUIScrollView+Additions.m in Sources */,
+				010F81831F4382700005F706 /* MyTextField.m in Sources */,
 				54790AE51EB6604C00BD33EC /* AFURLSessionManager.m in Sources */,
 				AB5976891EBF75C80040967A /* UIRefreshControl+AFNetworking.m in Sources */,
 				54790AE01EB6604C00BD33EC /* AFHTTPSessionManager.m in Sources */,
@@ -935,6 +946,7 @@
 				547824F41EB5E8D800A33E4F /* IQBarButtonItem.m in Sources */,
 				54790AE41EB6604C00BD33EC /* AFURLResponseSerialization.m in Sources */,
 				54267FBD1EB5108300547FB0 /* NavigationController.m in Sources */,
+				010F81861F4382C50005F706 /* UIColor+AppColor.m in Sources */,
 				54254DE71EB3BBF200990719 /* AppDelegate.m in Sources */,
 				547825151EB5EE5600A33E4F /* SignUpViewController.m in Sources */,
 				54790AE11EB6604C00BD33EC /* AFNetworkReachabilityManager.m in Sources */,
