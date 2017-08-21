@@ -45,7 +45,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
 
     
-    //if ([[SharedMS instance] getUserInfo] != nil)
+     //if ([[SharedMS instance] getUserInfo] != nil)
      if ([[SharedMS instance] getUserInfo] == nil)
     {
         
