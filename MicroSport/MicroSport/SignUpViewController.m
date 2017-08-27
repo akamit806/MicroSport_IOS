@@ -10,6 +10,9 @@
 #import "TextFieldPadding.h"
 #import "FRHyperLabel.h"
 #import "SharedMS.h"
+#import "CommonUtility.h"
+#import "MyTextField.h"
+#import "ETMenuViewController.h"
 
 @interface SignUpViewController ()
 
@@ -18,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldEmail;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldBio;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldAge;
-@property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldFavSports;
+@property (weak, nonatomic) IBOutlet MyTextField *textFieldFavSports;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldCountry;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldCode;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldPhone;
@@ -46,15 +49,25 @@
     [_textFieldEmail setAttributedPlaceholderText:@"Email*"];
     [_textFieldBio setAttributedPlaceholderText:@"Biography"];
     [_textFieldAge setAttributedPlaceholderText:@"Age"];
-    [_textFieldFavSports setAttributedPlaceholderText:@"Fav Sports"];
     [_textFieldCountry setAttributedPlaceholderText:@"Country*"];
     [_textFieldCode setAttributedPlaceholderText:@"Code"];
     [_textFieldPhone setAttributedPlaceholderText:@"Phone*"];
     [_textFieldPassword setAttributedPlaceholderText:@"Password*"];
     [_textFieldConfirmPassword setAttributedPlaceholderText:@"Confirm Password*"];
     
+    _textFieldFavSports.layer.masksToBounds = YES;
+    _textFieldFavSports.layer.cornerRadius = 1.0;
+    _textFieldFavSports.layer.borderWidth = 2.0;
+    _textFieldFavSports.layer.borderColor = [UIColor appYellowColor].CGColor;
+    UIColor *color = [UIColor whiteColor];
+     [CommonUtility setLeftPadding:_textFieldFavSports imageName:@"soccer" width:40];
+    _textFieldFavSports.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Soccer" attributes:@{NSForegroundColorAttributeName: color}];
+    _textFieldFavSports.text = @"Soccer";
+    _textFieldFavSports.textColor = color;
+    _textFieldFavSports.userInteractionEnabled = NO;
+    
     _viewGender.layer.masksToBounds = YES;
-    _viewGender.layer.cornerRadius = 5.0;
+    _viewGender.layer.cornerRadius = 1.0;
     _viewGender.layer.borderWidth = 2.0;
     _viewGender.layer.borderColor = [UIColor appYellowColor].CGColor;
     
@@ -178,7 +191,7 @@
             __weak typeof (self) weakSelf = self;
             [self.view endEditing:YES];
             [SVProgressHUD showWithStatus:@"Signing Up..."];
-            NSDictionary *parameters = @{@"user_id" : @0, @"first_name" : _textFieldFirstName.text, @"last_name" : _textFieldLastName.text, @"email" : _textFieldEmail.text, @"password" : _textFieldPassword.text, @"facebook_id" : @"", @"biography" : (_textFieldBio.text.length > 0 ? _textFieldBio.text : @""), @"age" : (_textFieldAge.text.length > 0 ? _textFieldAge.text : @""), @"fav_sport" : (_textFieldFavSports.text.length > 0 ? _textFieldFavSports.text : @""), @"country" : _textFieldCountry.text, @"phone_code" : (_textFieldCode.text.length > 0 ? _textFieldCode.text : @""), @"phone" : _textFieldPhone.text, @"gender" : (_buttonMale.isSelected ? @"male" : @"female")};
+            NSDictionary *parameters = @{@"user_id" : @0, @"first_name" : _textFieldFirstName.text, @"last_name" : _textFieldLastName.text, @"email" : _textFieldEmail.text, @"password" : _textFieldPassword.text, @"facebook_id" : @"", @"biography" : (_textFieldBio.text.length > 0 ? _textFieldBio.text : @""), @"age" : (_textFieldAge.text.length > 0 ? _textFieldAge.text : @""), @"fav_sport" :@"1", @"country" : _textFieldCountry.text, @"phone_code" : (_textFieldCode.text.length > 0 ? _textFieldCode.text : @""), @"phone" : _textFieldPhone.text, @"gender" : (_buttonMale.isSelected ? @"male" : @"female")};
             [[WebApiHandler sharedHandler] signUpWithParameters:parameters success:^(NSDictionary *response) {
                 [SVProgressHUD dismiss];
                 NSLog(@"%@", response);
@@ -187,6 +200,18 @@
                     if ([response objectForKey:@"data"] != nil)
                     {
                         [[SharedMS instance] setUserInfo:[response objectForKey:@"data"]];
+                        
+                        //--- Navigate to home screen ---
+                        ETMenuViewController *controller=[self.storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
+                        
+                        UIWindow *window = UIApplication.sharedApplication.delegate.window;
+                        window.rootViewController = controller;
+                        
+                        [UIView transitionWithView:window
+                                          duration:0.3
+                                           options:UIViewAnimationOptionTransitionCrossDissolve
+                                        animations:nil
+                                        completion:nil];
                     }
                 }
                 else

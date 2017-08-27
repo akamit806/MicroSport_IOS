@@ -1,6 +1,6 @@
 //
 //  CommonClass.m
-//  UNEYE
+//  MicroSport
 //
 //  Created by Satya Kumar on 29/07/15.
 //  Copyright (c) 2015 Satya Kumar All rights reserved.
@@ -19,64 +19,6 @@
         instance.userDictionary = [[NSMutableDictionary alloc] init];
     }
     return instance;
-}
-
--(void)storeSignUpGeneralInfo:(NSMutableDictionary *)dictionary{
-    
-    if (self.signUpInfoDict == nil) {
-        self.signUpInfoDict = [[NSMutableDictionary alloc] init];
-    }
-    
-    self.signUpInfoDict = [dictionary mutableCopy];
-}
-
--(void)storeSearchUserInfoForBooking:(NSMutableDictionary *)dictionary {
-    
-    if (self.searchUserDict == nil) {
-        self.searchUserDict = [[NSMutableDictionary alloc] init];
-    }
-    
-    self.searchUserDict = [dictionary mutableCopy];
-}
-
-//--- Current screen data ---
--(void)addScreenDataInfo:(NSString *)text key:(NSString *)key
-{
-    if (self.screenDataDictionary == nil) {
-        self.screenDataDictionary = [[NSMutableDictionary alloc] init];
-    }
-    
-    [self.screenDataDictionary setValue:text forKey:key];
-}
-
-//--- Service Request List Data ---
--(void)addServiceRequestListInfo:(NSMutableDictionary *)dictionary {
-
-    if (self.serviceRequestDataDict == nil) {
-        self.serviceRequestDataDict = [[NSMutableDictionary alloc] init];
-    }
-    
-    self.serviceRequestDataDict = [dictionary mutableCopy];
-}
-
-//--- Customer Booking List Data ---
--(void)addCustomerBookingListInfo:(NSMutableDictionary *)dictionary {
-    
-    if (self.cutomerBookingDict == nil) {
-        self.cutomerBookingDict = [[NSMutableDictionary alloc] init];
-    }
-    
-    self.cutomerBookingDict = [dictionary mutableCopy];
-}
-
-//--- Freelauncer Profile Data ---
--(void)addFreelauncerProfileInfo:(NSMutableDictionary *)dictionary {
-    
-    if (self.freelauncerProfileDict == nil) {
-        self.freelauncerProfileDict = [[NSMutableDictionary alloc] init];
-    }
-    
-    self.freelauncerProfileDict = [dictionary mutableCopy];
 }
 
 //--- Store Chat List ---
@@ -147,23 +89,6 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:tempMail];
 }
-
-//-(BOOL)a:(NSString *)b
-//{
-//    //Create character set
-//    NSCharacterSet *validChars = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"];
-//    
-//    //Invert the set
-//    validChars = [validChars invertedSet];
-//    
-//    //Check against that
-//    NSRange  range = [b rangeOfCharacterFromSet:validChars];
-//    
-////    if (NSNotFound != range.location) {
-////        kCustomAlertWithParamAndTarget(@"Message", @"invalid chars found", nil);
-////    }
-//     return ([b rangeOfCharacterFromSet:unwantedCharacters].location == NSNotFound);
-//}
 
 -(BOOL)isOnlySpace:(NSString *)text {
     NSCharacterSet *s = [NSCharacterSet characterSetWithCharactersInString:@" "];
@@ -236,11 +161,33 @@
     }
 }
 
+-(void)storeSelectedTeamMemebers:(NSMutableArray *)array{
+
+    if (_selectedTeamMembersArray == nil) {
+        _selectedTeamMembersArray = [[NSMutableArray alloc] init];
+    }else  if (_selectedTeamMembersArray.count > 0){
+        
+        [_selectedTeamMembersArray removeAllObjects];
+    }
+    
+    [_selectedTeamMembersArray addObjectsFromArray:array];
+}
+
 -(void)logoutAndRemoveUserData
 {
     [self.userDictionary removeAllObjects];
 }
 
+- (NSMutableDictionary *)createMutableDict:(NSDictionary *)dict{
+    
+    NSMutableDictionary *mutableDict = [NSMutableDictionary new];
+    
+    for (NSString *key in dict.allKeys) {
+        [mutableDict setValue:[dict valueForKey:key] forKey:key];
+    }
+    
+    return mutableDict;
+}
 
 -(void)updateCurrentLocation
 {
@@ -315,9 +262,6 @@
 
 -(void)showAlertWithMessage:(NSString*)message
 {
-//    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"Message" message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    
-//    [alert show];
     
     UIAlertController *alertController=[UIAlertController alertControllerWithTitle:NSLocalizedString(@"messageAlertKeyAllMessage", @"") message:message preferredStyle:UIAlertControllerStyleAlert];
    

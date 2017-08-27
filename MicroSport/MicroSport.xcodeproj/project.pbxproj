@@ -22,6 +22,9 @@
 		01276B031F3F77CB00B8893B /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B021F3F77CB00B8893B /* AsyncImageView.m */; };
 		01276B071F3F788900B8893B /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B061F3F788900B8893B /* CommonUtility.m */; };
 		01276B0B1F3F78D200B8893B /* NSDictionary+IgnoreNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */; };
+		523430971F51E5E4006FF406 /* UserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 523430961F51E5E4006FF406 /* UserListTableViewCell.m */; };
+		523CDDC81F51A2E7008F9864 /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523CDDC71F51A2E7008F9864 /* UserListViewController.m */; };
+		526F2CCF1F4B64A000033E74 /* SportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F2CCE1F4B649F00033E74 /* SportListViewController.m */; };
 		54254DE41EB3BBF200990719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE31EB3BBF200990719 /* main.m */; };
 		54254DE71EB3BBF200990719 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE61EB3BBF200990719 /* AppDelegate.m */; };
 		54254DEA1EB3BBF200990719 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE91EB3BBF200990719 /* SplashViewController.m */; };
@@ -124,6 +127,12 @@
 		01276B091F3F78D200B8893B /* NSDictionary+IgnoreNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+IgnoreNull.h"; sourceTree = "<group>"; };
 		01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IgnoreNull.m"; sourceTree = "<group>"; };
 		0AD1C287B25FF79E4B2A7563 /* libPods-MicroSport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MicroSport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523430951F51E5E4006FF406 /* UserListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListTableViewCell.h; sourceTree = "<group>"; };
+		523430961F51E5E4006FF406 /* UserListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewCell.m; sourceTree = "<group>"; };
+		523CDDC61F51A2E7008F9864 /* UserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserListViewController.h; path = UserList/UserListViewController.h; sourceTree = "<group>"; };
+		523CDDC71F51A2E7008F9864 /* UserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserListViewController.m; path = UserList/UserListViewController.m; sourceTree = "<group>"; };
+		526F2CCD1F4B649C00033E74 /* SportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SportListViewController.h; path = SportList/SportListViewController.h; sourceTree = "<group>"; };
+		526F2CCE1F4B649F00033E74 /* SportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SportListViewController.m; path = SportList/SportListViewController.m; sourceTree = "<group>"; };
 		54254DDF1EB3BBF200990719 /* MicroSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54254DE31EB3BBF200990719 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54254DE51EB3BBF200990719 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -444,6 +453,42 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		523CDDC51F51A027008F9864 /* SportListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				526F2CCD1F4B649C00033E74 /* SportListViewController.h */,
+				526F2CCE1F4B649F00033E74 /* SportListViewController.m */,
+			);
+			name = SportListViewController;
+			sourceTree = "<group>";
+		};
+		523CDDC91F51A2EF008F9864 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				523CDDC61F51A2E7008F9864 /* UserListViewController.h */,
+				523CDDC71F51A2E7008F9864 /* UserListViewController.m */,
+			);
+			name = UserList;
+			sourceTree = "<group>";
+		};
+		523CDDCA1F51A30B008F9864 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				01276AD71F3F69F300B8893B /* Splash */,
+				01276ADB1F3F6A1700B8893B /* LeftViewController */,
+				523CDDC91F51A2EF008F9864 /* UserList */,
+				523CDDC51F51A027008F9864 /* SportListViewController */,
+				01276AE01F3F6AE500B8893B /* ForgotPassword */,
+				01276ADF1F3F6A7200B8893B /* CreateTeam */,
+				ABD141001EBCF51B0069E11F /* Profile */,
+				01276AD61F3F69E300B8893B /* BaseViewController */,
+				01276AD81F3F69FC00B8893B /* Signin */,
+				01276AD91F3F6A0600B8893B /* Signup */,
+				01276ADA1F3F6A1000B8893B /* Home */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		54254DD61EB3BBF100990719 = {
 			isa = PBXGroup;
 			children = (
@@ -467,21 +512,13 @@
 		54254DE11EB3BBF200990719 /* MicroSport */ = {
 			isa = PBXGroup;
 			children = (
+				523CDDCA1F51A30B008F9864 /* ViewControllers */,
 				01276B0C1F3F78D700B8893B /* Catagory */,
 				01276B081F3F788E00B8893B /* CommonClasses */,
 				01276AF81F3F774600B8893B /* SlideMenuClass */,
 				547825121EB5EA8A00A33E4F /* Library */,
-				01276AE01F3F6AE500B8893B /* ForgotPassword */,
-				01276ADF1F3F6A7200B8893B /* CreateTeam */,
-				ABD141001EBCF51B0069E11F /* Profile */,
 				AB29ED391EBCDDE7009B016F /* Cell */,
 				01276AD51F3F69CB00B8893B /* Appdelegate */,
-				01276AD61F3F69E300B8893B /* BaseViewController */,
-				01276AD71F3F69F300B8893B /* Splash */,
-				01276AD81F3F69FC00B8893B /* Signin */,
-				01276AD91F3F6A0600B8893B /* Signup */,
-				01276ADA1F3F6A1000B8893B /* Home */,
-				01276ADB1F3F6A1700B8893B /* LeftViewController */,
 				54254DEB1EB3BBF200990719 /* Main.storyboard */,
 				54254DEE1EB3BBF200990719 /* Assets.xcassets */,
 				54254DF01EB3BBF200990719 /* LaunchScreen.storyboard */,
@@ -704,6 +741,8 @@
 			children = (
 				AB29ED3A1EBCDE1E009B016F /* LeftTableViewCell.h */,
 				AB29ED3B1EBCDE1E009B016F /* LeftTableViewCell.m */,
+				523430951F51E5E4006FF406 /* UserListTableViewCell.h */,
+				523430961F51E5E4006FF406 /* UserListTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -918,6 +957,7 @@
 				54254DEA1EB3BBF200990719 /* SplashViewController.m in Sources */,
 				54790AF01EB6749F00BD33EC /* RESideMenu.m in Sources */,
 				547824EC1EB5E8D800A33E4F /* IQUIScrollView+Additions.m in Sources */,
+				526F2CCF1F4B64A000033E74 /* SportListViewController.m in Sources */,
 				010F81831F4382700005F706 /* MyTextField.m in Sources */,
 				54790AE51EB6604C00BD33EC /* AFURLSessionManager.m in Sources */,
 				AB5976891EBF75C80040967A /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -946,6 +986,7 @@
 				547824F41EB5E8D800A33E4F /* IQBarButtonItem.m in Sources */,
 				54790AE41EB6604C00BD33EC /* AFURLResponseSerialization.m in Sources */,
 				54267FBD1EB5108300547FB0 /* NavigationController.m in Sources */,
+				523430971F51E5E4006FF406 /* UserListTableViewCell.m in Sources */,
 				010F81861F4382C50005F706 /* UIColor+AppColor.m in Sources */,
 				54254DE71EB3BBF200990719 /* AppDelegate.m in Sources */,
 				547825151EB5EE5600A33E4F /* SignUpViewController.m in Sources */,
@@ -973,6 +1014,7 @@
 				54790AF71EB6767100BD33EC /* LeftViewController.m in Sources */,
 				54254DE41EB3BBF200990719 /* main.m in Sources */,
 				54790AE21EB6604C00BD33EC /* AFSecurityPolicy.m in Sources */,
+				523CDDC81F51A2E7008F9864 /* UserListViewController.m in Sources */,
 				547824F51EB5E8D800A33E4F /* IQPreviousNextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

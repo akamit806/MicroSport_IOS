@@ -45,8 +45,8 @@
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
 
     
-     //if ([[SharedMS instance] getUserInfo] != nil)
-     if ([[SharedMS instance] getUserInfo] == nil)
+    //if ([[SharedMS instance] getUserInfo] != nil)
+    if ([[SharedMS instance] getUserInfo] == nil)
     {
         
         //--- Navigate to home screen ---

@@ -145,6 +145,17 @@
     return [self POST:Path parameters:parameters success:success failure:failure];
 }
 
+-(NSURLSessionTask *)getGameUserListParameters:(NSDictionary *)parameters success:(RequestCompletionHandler)success failure:(RequestFailureHandler)failure
+{
+    NSString *Path = [kAPIBaseURL stringByAppendingString:kGetGameUserList];
+    return [self POST:Path parameters:parameters success:success failure:failure];
+}
+
+-(NSURLSessionTask *)createTeamWithParameters:(NSDictionary *)parameters success:(RequestCompletionHandler)success failure:(RequestFailureHandler)failure
+{
+    NSString *createTeamPath = [kAPIBaseURL stringByAppendingString:kCreateTeam];
+    return [self POST:createTeamPath parameters:parameters success:success failure:failure];
+}
 
 
 @end

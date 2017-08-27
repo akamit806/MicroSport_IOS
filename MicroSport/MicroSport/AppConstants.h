@@ -21,6 +21,8 @@ FOUNDATION_EXPORT NSString *const kLogin;
 FOUNDATION_EXPORT NSString *const kGetUserProfile;
 FOUNDATION_EXPORT NSString *const kUpdateUserProfile;
 FOUNDATION_EXPORT NSString *const kForgotPassword;
+FOUNDATION_EXPORT NSString *const kGetGameUserList;
+FOUNDATION_EXPORT NSString *const kCreateTeam;
 
 
 // Common Messages

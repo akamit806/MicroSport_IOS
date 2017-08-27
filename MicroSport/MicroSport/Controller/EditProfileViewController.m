@@ -18,6 +18,8 @@
 #import "SharedMS.h"
 #import "UIButton+AFNetworking.h"
 #import "UIViewController+AMSlideMenu.h"
+#import "MyTextField.h"
+#import "CommonUtility.h"
 
 
 @interface EditProfileViewController ()
@@ -27,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldEmail;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldBio;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldAge;
-@property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldFavSports;
+@property (weak, nonatomic) IBOutlet MyTextField *textFieldFavSports;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldCountry;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldCode;
 @property (weak, nonatomic) IBOutlet TextFieldPadding *textFieldPhone;
@@ -48,7 +50,7 @@
     [super viewDidLoad];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        //[self callwebserviceForGetUserProfile];
+        [self callwebserviceForGetUserProfile];
     });
     [self setupView];
     [self editButtonAction:self.btnEdit];
@@ -62,13 +64,23 @@
     [_textFieldEmail setAttributedPlaceholderText:@"Email*"];
     [_textFieldBio setAttributedPlaceholderText:@"Biography"];
     [_textFieldAge setAttributedPlaceholderText:@"Age"];
-    [_textFieldFavSports setAttributedPlaceholderText:@"Fav Sports"];
     [_textFieldCountry setAttributedPlaceholderText:@"Country*"];
     [_textFieldCode setAttributedPlaceholderText:@"Code"];
     [_textFieldPhone setAttributedPlaceholderText:@"Phone*"];
     
+    _textFieldFavSports.layer.masksToBounds = YES;
+    _textFieldFavSports.layer.cornerRadius = 1.0;
+    _textFieldFavSports.layer.borderWidth = 2.0;
+    _textFieldFavSports.layer.borderColor = [UIColor appYellowColor].CGColor;
+    UIColor *color = [UIColor whiteColor];
+    [CommonUtility setLeftPadding:_textFieldFavSports imageName:@"soccer" width:40];
+    _textFieldFavSports.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Soccer" attributes:@{NSForegroundColorAttributeName: color}];
+    _textFieldFavSports.text = @"Soccer";
+    _textFieldFavSports.textColor = color;
+    _textFieldFavSports.userInteractionEnabled = NO;
+    
     _viewGender.layer.masksToBounds = YES;
-    _viewGender.layer.cornerRadius = 5.0;
+    _viewGender.layer.cornerRadius = 1.0;
     _viewGender.layer.borderWidth = 2.0;
     _viewGender.layer.borderColor = [UIColor appYellowColor].CGColor;
     
@@ -89,7 +101,7 @@
     self.textFieldEmail.text = [userData objectForKey:@"email"];
     self.textFieldBio.text = [userData objectForKey:@"biography"];
     self.textFieldAge.text = [userData objectForKey:@"age"];
-    self.textFieldFavSports.text = [userData objectForKey:@"fav_sport"];
+    self.textFieldFavSports.text = @"Soccer";   //[userData objectForKey:@"fav_sport"];
     self.textFieldCountry.text = [userData objectForKey:@"country"];
     self.textFieldCode.text = [userData objectForKey:@"phone_code"];
     self.textFieldPhone.text = [userData objectForKey:@"phone"];

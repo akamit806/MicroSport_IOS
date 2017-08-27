@@ -14,6 +14,7 @@
 #import <TwitterKit/TwitterKit.h>
 #import "SharedMS.h"
 #import <TwitterCore/TwitterCore.h>
+#import "ETMenuViewController.h"
 
 @interface SignInViewController ()<FBSDKLoginButtonDelegate>
 
@@ -65,7 +66,10 @@
     
     [self.view bringSubviewToFront:self.fbImageView];
     
-    
+    //--- For Testing ---
+    _textFieldEmail.text = @"sk@g.com";
+    _textFieldPassword.text = @"123456";
+    //--------------------
 }
 
 
@@ -122,7 +126,17 @@
                         [[SharedMS instance] setUserInfo:[response objectForKey:@"data"]];
                     }
 
-                    [weakSelf navigateToHomeScreen];
+                    //--- Navigate to home screen ---
+                    ETMenuViewController *controller=[self.storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
+                    
+                    UIWindow *window = UIApplication.sharedApplication.delegate.window;
+                    window.rootViewController = controller;
+                    
+                    [UIView transitionWithView:window
+                                      duration:0.3
+                                       options:UIViewAnimationOptionTransitionCrossDissolve
+                                    animations:nil
+                                    completion:nil];
                 }
                 else
                 {

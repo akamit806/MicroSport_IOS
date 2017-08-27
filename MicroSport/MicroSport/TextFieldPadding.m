@@ -51,7 +51,7 @@ static const CGFloat kPaddingViewWidth  =   20;
     [self setRightViewMode:UITextFieldViewModeAlways];
     
     self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = 5.0;
+    self.layer.cornerRadius = 1.0;
     self.layer.borderWidth = 2.0;
     self.layer.borderColor = [UIColor appYellowColor].CGColor;
 }

@@ -1,6 +1,6 @@
 //
 //  MyTextField.m
-//  UNEYE
+//  MicroSport
 //
 //  Created by Satya Kumar on 07/08/15.
 //  Copyright (c) 2015 Satya Kumar. All rights reserved.
@@ -25,7 +25,7 @@
 - (void)initialize
 {
 //    [self setBackgroundColor:[UIColor clearColor]];
-    self.textColor=[UIColor blackColor];
+    self.textColor=[UIColor whiteColor];
     if(self.placeholder!=nil)
         [self placeHolderTextField:self textForPlaceHolder:self.placeholder];
     

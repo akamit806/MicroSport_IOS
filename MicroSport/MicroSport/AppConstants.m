@@ -17,7 +17,8 @@ NSString *const kLogin          =       @"Method=SignIn";
 NSString *const kGetUserProfile          =       @"Method=GetProfile";
 NSString *const kUpdateUserProfile          =       @"Method=GetProfile";
 NSString *const kForgotPassword          =       @"Method=ForgotPassword";
-
+NSString *const kGetGameUserList          =       @"Method=Get_game_user_list";
+NSString *const kCreateTeam          =       @"Method=CreateTeam";
 
 #pragma -mark Common Messages
 
