@@ -22,9 +22,11 @@
 		01276B031F3F77CB00B8893B /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B021F3F77CB00B8893B /* AsyncImageView.m */; };
 		01276B071F3F788900B8893B /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B061F3F788900B8893B /* CommonUtility.m */; };
 		01276B0B1F3F78D200B8893B /* NSDictionary+IgnoreNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */; };
+		5219A16E1F72CE1400CB8963 /* IQDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5219A16D1F72CE1400CB8963 /* IQDropDownTextField.m */; };
 		523430971F51E5E4006FF406 /* UserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 523430961F51E5E4006FF406 /* UserListTableViewCell.m */; };
 		523CDDC81F51A2E7008F9864 /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523CDDC71F51A2E7008F9864 /* UserListViewController.m */; };
 		526F2CCF1F4B64A000033E74 /* SportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F2CCE1F4B649F00033E74 /* SportListViewController.m */; };
+		52C1848B1F548A5F004E8178 /* CreateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C1848A1F548A5F004E8178 /* CreateGameViewController.m */; };
 		54254DE41EB3BBF200990719 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE31EB3BBF200990719 /* main.m */; };
 		54254DE71EB3BBF200990719 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE61EB3BBF200990719 /* AppDelegate.m */; };
 		54254DEA1EB3BBF200990719 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54254DE91EB3BBF200990719 /* SplashViewController.m */; };
@@ -127,12 +129,16 @@
 		01276B091F3F78D200B8893B /* NSDictionary+IgnoreNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+IgnoreNull.h"; sourceTree = "<group>"; };
 		01276B0A1F3F78D200B8893B /* NSDictionary+IgnoreNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IgnoreNull.m"; sourceTree = "<group>"; };
 		0AD1C287B25FF79E4B2A7563 /* libPods-MicroSport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MicroSport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5219A16C1F72CE1400CB8963 /* IQDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQDropDownTextField.h; sourceTree = "<group>"; };
+		5219A16D1F72CE1400CB8963 /* IQDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQDropDownTextField.m; sourceTree = "<group>"; };
 		523430951F51E5E4006FF406 /* UserListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListTableViewCell.h; sourceTree = "<group>"; };
 		523430961F51E5E4006FF406 /* UserListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewCell.m; sourceTree = "<group>"; };
 		523CDDC61F51A2E7008F9864 /* UserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserListViewController.h; path = UserList/UserListViewController.h; sourceTree = "<group>"; };
 		523CDDC71F51A2E7008F9864 /* UserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserListViewController.m; path = UserList/UserListViewController.m; sourceTree = "<group>"; };
 		526F2CCD1F4B649C00033E74 /* SportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SportListViewController.h; path = SportList/SportListViewController.h; sourceTree = "<group>"; };
 		526F2CCE1F4B649F00033E74 /* SportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SportListViewController.m; path = SportList/SportListViewController.m; sourceTree = "<group>"; };
+		52C184891F548A5F004E8178 /* CreateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateGameViewController.h; path = CreateGame/CreateGameViewController.h; sourceTree = "<group>"; };
+		52C1848A1F548A5F004E8178 /* CreateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateGameViewController.m; path = CreateGame/CreateGameViewController.m; sourceTree = "<group>"; };
 		54254DDF1EB3BBF200990719 /* MicroSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54254DE31EB3BBF200990719 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54254DE51EB3BBF200990719 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -453,6 +459,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5219A16F1F72CE1D00CB8963 /* DropDownTextField */ = {
+			isa = PBXGroup;
+			children = (
+				5219A16C1F72CE1400CB8963 /* IQDropDownTextField.h */,
+				5219A16D1F72CE1400CB8963 /* IQDropDownTextField.m */,
+			);
+			name = DropDownTextField;
+			sourceTree = "<group>";
+		};
 		523CDDC51F51A027008F9864 /* SportListViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +489,7 @@
 		523CDDCA1F51A30B008F9864 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52C1848C1F548A6E004E8178 /* CreateGame */,
 				01276AD71F3F69F300B8893B /* Splash */,
 				01276ADB1F3F6A1700B8893B /* LeftViewController */,
 				523CDDC91F51A2EF008F9864 /* UserList */,
@@ -487,6 +503,15 @@
 				01276ADA1F3F6A1000B8893B /* Home */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		52C1848C1F548A6E004E8178 /* CreateGame */ = {
+			isa = PBXGroup;
+			children = (
+				52C184891F548A5F004E8178 /* CreateGameViewController.h */,
+				52C1848A1F548A5F004E8178 /* CreateGameViewController.m */,
+			);
+			name = CreateGame;
 			sourceTree = "<group>";
 		};
 		54254DD61EB3BBF100990719 = {
@@ -661,6 +686,7 @@
 		547825121EB5EA8A00A33E4F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				5219A16F1F72CE1D00CB8963 /* DropDownTextField */,
 				01276B041F3F77D200B8893B /* AsyncImageView */,
 				01276AF71F3F772E00B8893B /* AMSlideMenu */,
 				54790AE81EB6749F00BD33EC /* RESideMenu */,
@@ -958,8 +984,10 @@
 				54790AF01EB6749F00BD33EC /* RESideMenu.m in Sources */,
 				547824EC1EB5E8D800A33E4F /* IQUIScrollView+Additions.m in Sources */,
 				526F2CCF1F4B64A000033E74 /* SportListViewController.m in Sources */,
+				5219A16E1F72CE1400CB8963 /* IQDropDownTextField.m in Sources */,
 				010F81831F4382700005F706 /* MyTextField.m in Sources */,
 				54790AE51EB6604C00BD33EC /* AFURLSessionManager.m in Sources */,
+				52C1848B1F548A5F004E8178 /* CreateGameViewController.m in Sources */,
 				AB5976891EBF75C80040967A /* UIRefreshControl+AFNetworking.m in Sources */,
 				54790AE01EB6604C00BD33EC /* AFHTTPSessionManager.m in Sources */,
 				01276B0B1F3F78D200B8893B /* NSDictionary+IgnoreNull.m in Sources */,
