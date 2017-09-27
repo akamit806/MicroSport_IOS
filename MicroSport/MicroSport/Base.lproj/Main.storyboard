@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JYj-fv-TTO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gMr-GF-D5k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1569,9 +1569,20 @@
                                                                 <color key="textColor" red="0.27840378880500793" green="0.27844899892807007" blue="0.27839386463165283" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGq-WT-Ijg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="170" id="Csa-JU-6yg"/>
+                                                                    <constraint firstAttribute="width" constant="170" id="H5Q-Li-qos"/>
+                                                                </constraints>
+                                                                <connections>
+                                                                    <action selector="addTeamPhoto:" destination="rsW-ac-gcv" eventType="touchUpInside" id="8oz-c4-dUu"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="gGq-WT-Ijg" secondAttribute="trailing" id="03u-tp-GrA"/>
                                                             <constraint firstAttribute="height" constant="170" id="03z-w6-YYb"/>
                                                             <constraint firstItem="Utp-tg-mho" firstAttribute="leading" secondItem="83U-st-dL3" secondAttribute="leading" constant="49" id="6eR-9i-ijB"/>
                                                             <constraint firstItem="Utp-tg-mho" firstAttribute="top" secondItem="83U-st-dL3" secondAttribute="top" constant="36" id="WeU-Eh-Ges"/>
@@ -1579,7 +1590,10 @@
                                                             <constraint firstAttribute="trailing" secondItem="Utp-tg-mho" secondAttribute="trailing" constant="48" id="eKK-e7-3ZV"/>
                                                             <constraint firstAttribute="trailing" secondItem="TgX-jy-gbf" secondAttribute="trailing" constant="4" id="gpg-j9-jwU"/>
                                                             <constraint firstItem="TgX-jy-gbf" firstAttribute="top" secondItem="Utp-tg-mho" secondAttribute="bottom" constant="8" id="gtj-ff-NVt"/>
+                                                            <constraint firstItem="gGq-WT-Ijg" firstAttribute="top" secondItem="83U-st-dL3" secondAttribute="top" id="iIV-6w-PQ7"/>
+                                                            <constraint firstItem="gGq-WT-Ijg" firstAttribute="leading" secondItem="83U-st-dL3" secondAttribute="leading" id="klH-kA-gz4"/>
                                                             <constraint firstAttribute="width" constant="170" id="pEo-5f-Ojm"/>
+                                                            <constraint firstAttribute="bottom" secondItem="gGq-WT-Ijg" secondAttribute="bottom" id="xhC-Go-aMd"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PgV-eF-Kki">
@@ -1741,6 +1755,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="720"/>
                     <connections>
+                        <outlet property="addTeamPhotoBtn" destination="gGq-WT-Ijg" id="QDA-Xy-wOw"/>
                         <outlet property="doneBtn" destination="3C7-On-skC" id="7pU-v9-EvK"/>
                         <outlet property="scrollView" destination="fco-cU-HgZ" id="JoP-KJ-KZ8"/>
                         <outlet property="sportNameTxtFld" destination="awC-Pq-p5F" id="2il-WW-JDt"/>
@@ -2481,6 +2496,9 @@
                                                                     <constraint firstAttribute="width" constant="170" id="C2R-47-6iO"/>
                                                                     <constraint firstAttribute="height" constant="170" id="K73-Co-jJg"/>
                                                                 </constraints>
+                                                                <connections>
+                                                                    <action selector="addGamePhoto:" destination="JYj-fv-TTO" eventType="touchUpInside" id="6w4-8P-eHq"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2635,6 +2653,16 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYy-9d-mna">
+                                                        <rect key="frame" x="8" y="341" width="343" height="55"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="343" id="Lcy-3D-O5N"/>
+                                                            <constraint firstAttribute="height" constant="55" id="Wi8-Nz-Bgz"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <segue destination="YO2-3c-CM2" kind="presentation" identifier="playerlistseque" id="TiV-Na-qCU"/>
+                                                        </connections>
+                                                    </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location/Venue" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-v8-W9g" customClass="MyTextField">
                                                         <rect key="frame" x="8" y="411" width="343" height="55"/>
                                                         <constraints>
@@ -2688,9 +2716,13 @@
                                                     <constraint firstItem="Cww-by-6ql" firstAttribute="top" secondItem="O5w-Nu-KJe" secondAttribute="bottom" constant="9" id="RUR-wf-tOX"/>
                                                     <constraint firstAttribute="bottom" secondItem="9eq-v8-W9g" secondAttribute="bottom" constant="184" id="TRV-p0-UzM"/>
                                                     <constraint firstItem="yut-Re-qnA" firstAttribute="top" secondItem="Zab-kD-DpZ" secondAttribute="bottom" constant="10" id="TuU-x2-BGy"/>
+                                                    <constraint firstItem="hYy-9d-mna" firstAttribute="top" secondItem="Cww-by-6ql" secondAttribute="bottom" constant="12" id="UtY-OP-WHK"/>
+                                                    <constraint firstItem="9eq-v8-W9g" firstAttribute="top" secondItem="hYy-9d-mna" secondAttribute="bottom" constant="15" id="Yj7-Mh-lEi"/>
                                                     <constraint firstItem="9eq-v8-W9g" firstAttribute="leading" secondItem="F10-23-kJa" secondAttribute="leadingMargin" id="Yja-zq-gsB"/>
                                                     <constraint firstAttribute="width" constant="359" id="ZzF-hu-OM6"/>
                                                     <constraint firstItem="qG6-Sl-fbO" firstAttribute="leading" secondItem="yut-Re-qnA" secondAttribute="leading" id="b1t-tb-M7Z"/>
+                                                    <constraint firstItem="hYy-9d-mna" firstAttribute="leading" secondItem="F10-23-kJa" secondAttribute="leading" constant="8" id="ek7-sH-YWZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hYy-9d-mna" secondAttribute="trailing" constant="8" id="hlL-sc-fQ2"/>
                                                     <constraint firstItem="9eq-v8-W9g" firstAttribute="leading" secondItem="O5w-Nu-KJe" secondAttribute="leading" id="miT-rC-eOA"/>
                                                     <constraint firstItem="9eq-v8-W9g" firstAttribute="leading" secondItem="Zab-kD-DpZ" secondAttribute="leading" id="q3x-oV-wj4"/>
                                                     <constraint firstItem="9eq-v8-W9g" firstAttribute="leading" secondItem="Cww-by-6ql" secondAttribute="leading" id="xwW-Qc-uWn"/>
@@ -2799,4 +2831,7 @@
         <image name="upperleftcornurbg" width="168" height="132"/>
         <image name="upperrightcornurbg" width="168" height="132"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TiV-Na-qCU"/>
+    </inferredMetricsTieBreakers>
 </document>

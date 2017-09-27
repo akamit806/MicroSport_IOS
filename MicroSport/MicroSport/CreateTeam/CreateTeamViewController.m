@@ -10,7 +10,7 @@
 #import "CommonUtility.h"
 #import "SharedMS.h"
 
-@interface CreateTeamViewController ()
+@interface CreateTeamViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
@@ -26,6 +26,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    
+    if ([[CommonUtility sharedInstance].selectedTeamMembersArray count] > 0) {
+        [[CommonUtility sharedInstance].selectedTeamMembersArray removeAllObjects];
+    }
 }
 
 /*
@@ -58,6 +67,86 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)addTeamPhoto:(id)sender {
+}
+
+-(void)gotoTakePhoto
+{
+    
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Options" message:@"Please choose one resource" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self accessCameraPhotos:@"camera"];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Photos" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self accessCameraPhotos:@""];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        //Cancel button tappped.
+        [self dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+    
+    //show action sheet
+    actionSheet.popoverPresentationController.sourceView = self.view;
+    
+    // Present action sheet.
+    [self presentViewController:actionSheet animated:YES completion:nil];
+    
+}
+
+-(void)accessCameraPhotos:(NSString *)sourceType{
+    
+    UIImagePickerController *imagePickerController;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] && [sourceType isEqualToString:@"camera" ])
+    {
+        imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+    }else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+        
+        imagePickerController =[[UIImagePickerController alloc] init];
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        //imagePickerController.mediaTypes = @[(NSString*)kUTTypeImage, (NSString*)kUTTypeMovie, (NSString*)kUTTypeAVIMovie, (NSString*)kUTTypeVideo, (NSString*)kUTTypeMPEG4];
+        imagePickerController.videoQuality = UIImagePickerControllerQualityTypeHigh;
+        
+    }
+    
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+#pragma mark UIImagePickerController Delegates
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = [originalImage copy];
+    
+    //Have the image draw itself in the correct orientation if necessary
+    if(!(image.imageOrientation == UIImageOrientationUp ||
+         image.imageOrientation == UIImageOrientationUpMirrored))
+    {
+        CGSize imgsize = image.size;
+        UIGraphicsBeginImageContext(imgsize);
+        [image drawInRect:CGRectMake(0.0, 0.0, imgsize.width, imgsize.height)];
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    
+    //--- Set image on preview ---
+    [self.addTeamPhotoBtn setImage:image forState:UIControlStateNormal];
+    
+}
+
 
 - (void)configureUI{
 

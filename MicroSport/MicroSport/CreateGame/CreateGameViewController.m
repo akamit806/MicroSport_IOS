@@ -9,7 +9,7 @@
 #import "CreateGameViewController.h"
 #import "CommonUtility.h"
 
-@interface CreateGameViewController ()
+@interface CreateGameViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-     [self configureUI];
+    [self configureUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,15 +27,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+- (void)viewWillDisappear:(BOOL)animated{
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [super viewWillDisappear:animated];
+    
+    if ([[CommonUtility sharedInstance].selectedTeamMembersArray count] > 0) {
+        [[CommonUtility sharedInstance].selectedTeamMembersArray removeAllObjects];
+    }
 }
-*/
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (void)configureUI{
     
@@ -76,7 +85,7 @@
     _gameCategoryLbl.layer.borderColor = [UIColor colorWithRed:214.0/255 green:219.0/255 blue:218.0/255 alpha:1].CGColor;
     _gameCategoryLbl.layer.borderWidth = 1.0;
     _gameCategoryLbl.layer.masksToBounds = YES;
-
+    
     [CommonUtility setLeftPadding:_gameCategoryLbl imageName:@"soccer" width:40];
     _gameCategoryLbl.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Soccer" attributes:@{NSForegroundColorAttributeName: color}];
     _gameCategoryLbl.text = @"Soccer";
@@ -89,8 +98,8 @@
     [CommonUtility setLeftPadding:_gameTypeLbl imageName:nil width:16];
     _gameTypeLbl.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Type" attributes:@{NSForegroundColorAttributeName: color}];
     _gameTypeLbl.isOptionalDropDown = NO;
-    [_gameTypeLbl setItemList:[NSArray arrayWithObjects:@"Type", @"League",@"Pickup", nil]];
-
+    [_gameTypeLbl setItemList:[NSArray arrayWithObjects:@"Type", @"League", @"Pickup", nil]];
+    
     _gameFeeLbl.layer.borderColor = [UIColor colorWithRed:214.0/255 green:219.0/255 blue:218.0/255 alpha:1].CGColor;
     _gameFeeLbl.layer.borderWidth = 1.0;
     _gameFeeLbl.layer.masksToBounds = YES;
@@ -123,10 +132,10 @@
 
 - (void)backWithAction{
     
-//    if ([[CommonUtility sharedInstance].selectedTeamMembersArray count] > 0) {
-//        
-//        [[CommonUtility sharedInstance].selectedTeamMembersArray removeAllObjects];
-//    }
+    //    if ([[CommonUtility sharedInstance].selectedTeamMembersArray count] > 0) {
+    //
+    //        [[CommonUtility sharedInstance].selectedTeamMembersArray removeAllObjects];
+    //    }
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -134,5 +143,85 @@
 - (IBAction)doneBtnAction:(id)sender {
 }
 
+- (IBAction)addGamePhoto:(id)sender {
+    
+    [self gotoTakePhoto];
+}
+
+-(void)gotoTakePhoto
+{
+    
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Options" message:@"Please choose one resource" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self accessCameraPhotos:@"camera"];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Photos" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self accessCameraPhotos:@""];
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        //Cancel button tappped.
+        [self dismissViewControllerAnimated:YES completion:^{
+        }];
+    }]];
+    
+    //show action sheet
+    actionSheet.popoverPresentationController.sourceView = self.view;
+    
+    // Present action sheet.
+    [self presentViewController:actionSheet animated:YES completion:nil];
+    
+}
+
+-(void)accessCameraPhotos:(NSString *)sourceType{
+    
+    UIImagePickerController *imagePickerController;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] && [sourceType isEqualToString:@"camera" ])
+    {
+        imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+    }else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+        
+        imagePickerController =[[UIImagePickerController alloc] init];
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        //imagePickerController.mediaTypes = @[(NSString*)kUTTypeImage, (NSString*)kUTTypeMovie, (NSString*)kUTTypeAVIMovie, (NSString*)kUTTypeVideo, (NSString*)kUTTypeMPEG4];
+        imagePickerController.videoQuality = UIImagePickerControllerQualityTypeHigh;
+        
+    }
+    
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+    [self presentViewController:imagePickerController animated:YES completion:nil];
+}
+
+#pragma mark UIImagePickerController Delegates
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *image = [originalImage copy];
+    
+    //Have the image draw itself in the correct orientation if necessary
+    if(!(image.imageOrientation == UIImageOrientationUp ||
+         image.imageOrientation == UIImageOrientationUpMirrored))
+    {
+        CGSize imgsize = image.size;
+        UIGraphicsBeginImageContext(imgsize);
+        [image drawInRect:CGRectMake(0.0, 0.0, imgsize.width, imgsize.height)];
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    
+    //--- Set image on preview ---
+    [self.addGamePhotoBtn setImage:image forState:UIControlStateNormal];
+    
+}
 
 @end

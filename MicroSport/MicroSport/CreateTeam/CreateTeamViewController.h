@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet MyTextField *sportNameTxtFld;
 @property (weak, nonatomic) IBOutlet UITextView *teamBioTxtFld;
 @property (weak, nonatomic) IBOutlet UIButton *doneBtn;
+@property (weak, nonatomic) IBOutlet UIButton *addTeamPhotoBtn;
 
 @end
